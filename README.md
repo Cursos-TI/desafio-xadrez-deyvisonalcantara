@@ -1,75 +1,139 @@
-# ⚠️ Importante!!!
-Você pode escolher qualquer um dos desafios para desenvolver. Sinta-se à vontade para começar pelo desafio que mais lhe interessa.
+# ♟️ Movimentando as Peças do Xadrez em C
 
-# Desafio de Xadrez - MateCheck
+## 🎯 Objetivo
 
-Bem-vindo ao desafio de Xadrez da MateCheck! Este projeto tem como objetivo testar e determinar os limites de utilização do código dentro do jogo utilizando estruturas de repetição e funções avançadas.
+Este programa em C simula o movimento de três peças de xadrez — **Torre**, **Bispo** e **Rainha** — utilizando as estruturas de repetição `for`, `while` e `do-while`.
+O foco é praticar controle de fluxo e repetição, aplicando conceitos básicos de programação estruturada.
 
-## Níveis do Desafio
+---
 
-### 🏅 Nível Novato
+## 🧠 Conceitos Praticados
 
-A equipe de testes da MateCheck recebeu uma solicitação para determinar os limites de utilização do código dentro do jogo. Para isso, a equipe de programação solicitou o envio de blocos de código contendo loops (estruturas de repetição) para avaliação de desempenho e possibilidades de aplicação.
+* Estruturas de repetição (`for`, `while`, `do-while`)
+* Impressão sequencial de ações no console (`printf`)
+* Organização e documentação de código
+* Lógica de movimentação simples em um tabuleiro de xadrez
 
-**Movimentação das Peças:**
-- Bispo: 5 casas na diagonal superior direita
-- Torre: 5 casas para a direita
-- Rainha: 8 casas para a esquerda
+---
 
-No jogo, apenas possuímos movimentação para quatro direções, mas o Bispo se mexe na diagonal. Com isso, foi adicionada uma condição para movimentação dessa peça, em que, para movê-lo, utilizamos o comando `printf` e, em seu valor, colocamos a direção usando a combinação de direções básicas. 
+## 📜 Código-Fonte
 
-**Requisitos Funcionais:**
-1. **Entrada de Dados:**
-   - Os valores necessários devem ser inseridos manualmente a partir de variáveis dentro do código.
-   - Será permitido o uso de constantes para facilitar a escrita do código e evitar repetição de valores.
-2. **Estruturas de Repetição:**
-   - Os códigos precisam ser desenvolvidos utilizando estruturas de repetição.
-3. **Saída de Dados:**
-   - O sistema deve exibir os resultados de cada procedimento de forma clara e legível.
+Arquivo: `xadrez.c`
 
-**Requisitos Não Funcionais:**
-1. **Performance:**
-   - O sistema deve executar os cálculos e apresentar os resultados sem atrasos perceptíveis.
-2. **Documentação:**
-   - O código deve ser bem documentado, incluindo comentários detalhados sobre a função de cada parte do código.
-3. **Manutenibilidade:**
-   - O código deve ser escrito de forma clara, empregando nomes de variáveis que permitam o fácil entendimento.
+```c
+#include <stdio.h>
 
-**Instruções Detalhadas:**
-1. **Entrada de Dados:**
-   - Inclua a biblioteca padrão de entrada e saída no início do seu programa.
-   - Declare variáveis constantes para definir os valores a serem comparados dentro das estruturas condicionais.
-2. **Estruturas de Repetição:**
-   - Utilize cada uma das diferentes estruturas de repetição apresentadas.
-3. **Saída:**
-   - As saídas deverão ser mostradas de forma clara e organizada, com a direção da peça.
+int main() {
+    
+    // Simulação de Movimentos no Xadrez
+    // Peças: Torre, Bispo e Rainha
+    // Estruturas usadas: for, while e do-while
+    
 
-**Nomenclatura:**
+    // TORRE → Movimento em linha reta (horizontal ou vertical)
+    // Usa estrutura de repetição FOR
+   
+    int movimentoTorre = 5;
+    printf("=== Movimento da Torre ===\n");
+    for (int i = 1; i <= movimentoTorre; i++) {
+        printf("Direita (%d casa)\n", i);
+    }
 
-printf("Cima\n");
-printf("Baixo\n");
-printf("Esquerda\n");
-printf("Direita\n");
+    printf("\n");
 
-### 🏅 Nível Aventureiro
-Agora que já conseguimos mover as peças mais simples usando loops, os desenvolvedores pediram para elaborar os loops de outra forma. Para o desafio, moveremos o cavalo, que possui sua movimentação em L. O cavalo deve se movimentar para baixo e para a esquerda, usando pelo menos duas estruturas de repetição: uma deve ser for e a outra pode ser while ou do-while.
+   
+    // BISPO → Movimento na diagonal
+    // Usa estrutura WHILE
+    
+    int movimentoBispo = 5;
+    int contador = 1;
+    printf("=== Movimento do Bispo ===\n");
+    while (contador <= movimentoBispo) {
+        printf("Cima e Direita (%d casa)\n", contador);
+        contador++;
+    }
 
-**Movimentação do Cavalo:**
+    printf("\n");
 
-Mover o cavalo em L utilizando loops aninhados.
-Obs: É obrigatório o uso de loops aninhados.
+    
+    // RAINHA → Movimento em todas as direções
+    // Usa estrutura DO-WHILE
+  
+    int movimentoRainha = 8;
+    int contadorRainha = 1;
+    printf("=== Movimento da Rainha ===\n");
+    do {
+        printf("Esquerda (%d casa)\n", contadorRainha);
+        contadorRainha++;
+    } while (contadorRainha <= movimentoRainha);
 
-### 🥇 Nível Mestre
-Para o desafio final, as peças que utilizam loops simples terão seus códigos trocados por **funções recursivas**, e a movimentação do cavalo utilizará loops com variáveis múltiplas e/ou condições múltiplas, permitindo o uso de continue e break.
+    printf("\nMovimentos concluídos!\n");
 
-**Movimentação das Peças:**
+    return 0;
+}
+```
 
-**Bispo**: 5 casas na diagonal direita para cima
-**Torre**: 5 casas para a direita
-**Rainha**: 8 casas para a esquerda
-**Cavalo**: 1 vez em L para cima à direita
-Obs: É obrigatório o uso de loops aninhados na movimentação do bispo e funções recursivas.
+---
 
-Ao concluir este desafio, você terá um conhecimento mais profundo de estruturas complexas e elaboradas, amplamente utilizadas no mercado de trabalho. Boa sorte e boa programação!
+## 🧩 Saída Esperada no Console
 
-Equipe de Ensino - MateCheck
+```
+=== Movimento da Torre ===
+Direita (1 casa)
+Direita (2 casa)
+Direita (3 casa)
+Direita (4 casa)
+Direita (5 casa)
+
+=== Movimento do Bispo ===
+Cima e Direita (1 casa)
+Cima e Direita (2 casa)
+Cima e Direita (3 casa)
+Cima e Direita (4 casa)
+Cima e Direita (5 casa)
+
+=== Movimento da Rainha ===
+Esquerda (1 casa)
+Esquerda (2 casa)
+Esquerda (3 casa)
+Esquerda (4 casa)
+Esquerda (5 casa)
+Esquerda (6 casa)
+Esquerda (7 casa)
+Esquerda (8 casa)
+
+Movimentos concluídos!
+```
+
+---
+
+## ⚙️ Como Compilar e Executar
+
+No terminal (Linux, macOS ou Windows com MinGW):
+
+```bash
+gcc xadrez.c -o xadrez
+./xadrez
+```
+
+---
+
+## 🧭 Estrutura do Código
+
+| Peça       | Direção simulada | Estrutura usada | Movimento |
+| ---------- | ---------------- | --------------- | --------- |
+| **Torre**  | Direita          | `for`           | 5 casas   |
+| **Bispo**  | Cima e Direita   | `while`         | 5 casas   |
+| **Rainha** | Esquerda         | `do-while`      | 8 casas   |
+
+---
+
+## 🏁 Conclusão
+
+O programa demonstra com clareza o uso das principais estruturas de repetição em C aplicadas a um contexto lúdico — o xadrez.
+Cada peça segue um padrão de movimento simples e previsível, servindo como base para os desafios intermediário e avançado.
+
+**Autor:** Deyvison Alcantara da Silva
+**Linguagem:** C
+
+
